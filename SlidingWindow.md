@@ -1,5 +1,4 @@
-### DSALearning
-# Longest Substring Without Repeating Characters
+### Longest Substring Without Repeating Characters
 
 Given a string `s`, find the length of the longest substring without repeating characters.
 
@@ -39,3 +38,55 @@ func lengthOfLongestSubstring(_ s: String) -> Int {
     
     return ans
 }
+
+
+
+
+
+### Max Consecutive Ones III
+
+Given a string `s`, find the length of the longest substring without repeating characters.
+
+Example 1:
+
+Input: nums = [1,1,1,0,0,0,1,1,1,1,0], k = 2
+Output: 6
+Explanation: [1,1,1,0,0,1,1,1,1,1,1]
+Bolded numbers were flipped from 0 to 1. The longest subarray is underlined.
+Example 2:
+
+Input: nums = [0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1], k = 3
+Output: 10
+Explanation: [0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,1,1,1,1]
+Bolded numbers were flipped from 0 to 1. The longest subarray is underlined.
+
+Here's the Swift implementation:
+
+```swift
+func longestOnes(_ nums: [Int], _ k: Int) -> Int {
+    var left = 0
+    var maxCount = 0
+    var zeroCount = 0
+    for right in 0..<nums.count {
+        if nums[right] == 0 {
+            zeroCount += 1
+        }
+        while zeroCount > k {
+            if nums[left] == 0 {
+                zeroCount -= 1
+            }
+            left += 1
+        }
+        maxCount = max(maxCount, right - left + 1)
+    }
+    return maxCount
+}
+
+
+
+
+
+
+
+
+
