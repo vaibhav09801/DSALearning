@@ -37,7 +37,7 @@ func lengthOfLongestSubstring(_ s: String) -> Int {
     }
     
     return ans
-}
+}```
 
 
 
@@ -80,7 +80,7 @@ func longestOnes(_ nums: [Int], _ k: Int) -> Int {
         maxCount = max(maxCount, right - left + 1)
     }
     return maxCount
-}
+}```
 
 
 
