@@ -4,11 +4,23 @@
 
 Given a string `s`, find the length of the longest substring without repeating characters.
 
-## Approach
+Example 1:
 
-We can solve this problem efficiently using a sliding window approach. We'll maintain a hashmap to store the most recent index of each character we've encountered. We'll also use a pointer to keep track of the starting index of the current substring. 
+Input: s = "abcabcbb"
+Output: 3
+Explanation: The answer is "abc", with the length of 3.
+Example 2:
 
-As we iterate through the string, if we encounter a character that is already present in our hashmap, we update the pointer to skip over the characters that have been repeated. We then update the answer by calculating the length of the current substring and comparing it with the previous answer. Finally, we update the hashmap with the most recent index of the current character.
+Input: s = "bbbbb"
+Output: 1
+Explanation: The answer is "b", with the length of 1.
+Example 3:
+
+Input: s = "pwwkew"
+Output: 3
+Explanation: The answer is "wke", with the length of 3.
+Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
+
 
 Here's the Swift implementation:
 
